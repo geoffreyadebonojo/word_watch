@@ -6,7 +6,7 @@ function postWords(word){
   let cleanedWord = word.replace(/[^a-zA-Z ]/g, "");
   console.log(cleanedWord);
 
-  let addWordsUrl = "http://localhost:3000/api/v1/words"
+  let addWordsUrl = "https://wordwatch-api.herokuapp.com/api/v1/words"
   let addWordsData = {
     word: { value: cleanedWord }
   }
@@ -20,7 +20,7 @@ function postWords(word){
 $(document).ready(() => {
   // have fun!
 
-  fetch(`http://localhost:3000/api/v1/top_word`)
+  fetch(`https://wordwatch-api.herokuapp.com/api/v1/top_word`)
   .then(response => response.json())
   .then(data => {
     let topWord = data.word;
