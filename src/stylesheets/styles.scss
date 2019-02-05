@@ -80,6 +80,10 @@ main {
       color: $salmon;
       padding: 10px;
     }
+    #word {
+      font-family: 'Pacifico', cursive;
+      text-transform: capitalize;
+    }
     .word-count {
       display: flex;
       flex-wrap: wrap;
@@ -88,6 +92,8 @@ main {
       overflow-y: scroll;
       overflow-x: scroll;
       height: 90vh;
+      margin: 50px;
+      font-size: 10em;
       p {
         margin-right: 10px;
         span {
