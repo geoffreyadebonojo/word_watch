@@ -1,7 +1,20 @@
 import $ from 'jquery';
 
 
+function postWords(word){
 
+  let cleanedWord = word.replace(/[^a-zA-Z ]/g, "");
+  console.log(cleanedWord);
+
+  let addWordsUrl = "http://localhost:3000/api/v1/words"
+  let addWordsData = {
+    word: { value: cleanedWord }
+  }
+
+  $.post(addWordsUrl, addWordsData, function(data, status){
+      console.log(data);
+  });
+}
 
 
 $(document).ready(() => {
@@ -33,15 +46,7 @@ $(document).ready(() => {
     console.log(words);
 
     for (var i= 0; i< words.length; i++){
-
-    let addWordsUrl = "http://localhost:3000/api/v1/words"
-    let addWordsData = {
-      word: { value: words[i] }
-    }
-
-    $.post(addWordsUrl, addWordsData, function(data, status){
-        console.log(data);
-    });
+      postWords(words[i]);
     }
 
     //prevent the normal submission of the form
